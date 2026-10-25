@@ -17,7 +17,7 @@ body {
 }
 
 .hero {
-    padding: 60px 20px;
+    padding: 35px 20px;
 }
 
 h1 {
@@ -68,6 +68,45 @@ button {
     border-radius: 6px;
     margin-top: 15px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #00A651;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.betslip {
+    text-align: left;
+    display: inline-block;
+    margin: 10px auto;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    width: 85%;
+    max-width: 450px;
+}
+
+.betslip ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.betslip li {
+    margin-bottom: 12px;
+}
+
 </style>
 
 </head>
@@ -76,10 +115,18 @@ button {
 <div class="hero">
 <h1>CheckaBookie</h1>
 
-<h2>Don't just compare odds. Compare payouts.</h2>
+<h2>Compare Bet Builder & ACCA Payouts</h2>
 
 <p>
-See exactly how much extra money better bookmaker odds could return.
+Could your bet builder return more elsewhere?
+</p>
+
+<p>
+See which bookmaker pays the most for exactly the same football bet.
+</p>
+
+<p>
+Includes bet boosts, enhanced odds and special promotions.
 </p>
 </div>
 
@@ -87,43 +134,152 @@ See exactly how much extra money better bookmaker odds could return.
 
 <div class="card">
 
-<h3>Value Difference Calculator™</h3>
+<h3>See How Checkabookie Works</h3>
 
-<input id="stake" type="number" value="25" placeholder="Stake (£)">
+<p>
+Build your selections once and instantly compare returns across bookmakers.
+</p>
 
-<input id="oddsA" type="number" step="0.01" value="2.10" placeholder="Odds A">
+<hr>
 
-<input id="oddsB" type="number" step="0.01" value="2.25" placeholder="Odds B">
+<p>
+<strong>Example £10 Bet Builder</strong>
+</p>
 
-<button onclick="calculate()">Calculate</button>
+<p>
+Liverpool v Manchester United
+</p>
 
-<div id="result" class="result"></div>
+<div class="betslip">
+
+<ul>
+<li><strong>Liverpool To Win</strong></li>
+
+<li><strong>Both Teams To Score</strong></li>
+
+<li><strong>Bruno Fernandes 1+ Shot On Target</strong></li>
+
+<li><strong>Isak To Score</strong></li>
+
+<li><strong>Over 9.5 Match Corners</strong></li>
+</ul>
+
+</div>
+
+<p>
+<strong>Stake: £10</strong>
+</p>
+
+<table>
+
+<tr>
+<th>Bookmaker</th>
+<th>Boost</th>
+<th>Return</th>
+</tr>
+
+<tr>
+<td>Bet365</td>
+<td>25%</td>
+<td>£75.00</td>
+</tr>
+
+<tr>
+<td>Paddy Power</td>
+<td>None</td>
+<td>£61.50</td>
+</tr>
+
+<tr>
+<td>Sky Bet</td>
+<td>None</td>
+<td>£58.00</td>
+</tr>
+
+<tr>
+<td>Betfair</td>
+<td>None</td>
+<td>£57.50</td>
+</tr>
+
+</table>
+
+<div class="result">
+
+Best Available Return: £75.00
+
+</div>
+
+<p>
+
+You could receive £17.50 more by choosing the best bookmaker.
+
+</p>
 
 </div>
 
 <div class="card">
 
-<h3>Coming Soon</h3>
+<h3>Planned Supported Markets</h3>
 
 <p>
-Smart Bet Builder Value Explorer™
+Designed to support the football betting markets most commonly used in bet builders and accumulators.
 </p>
 
+<hr>
+
 <p>
-Compare:
-Result, BTTS, Goals, Corners, Cards,
-Anytime Scorer, Score or Assist,
-Shots On Target and more.
+Match Result<br>
+Double Chance<br>
+Both Teams To Score (BTTS)<br>
+Result & Both Teams To Score (BTTS)<br>
+Over / Under Goals<br>
+Match Goals<br>
+Team Goals<br>
+Correct Score<br>
 </p>
+
+<hr>
+
+<p>
+Player To Score<br>
+Player To Score Multiple Goals<br>
+Player To Score or Assist<br>
+Player Shots<br>
+Player Shots On Target<br>
+Player Fouls Won<br>
+Player Fouls Committed<br>
+Player Tackles<br>
+</p>
+
+<hr>
+
+<p>
+Cards<br>
+Red Card Markets<br>
+Corners<br>
+Goalkeeper Saves<br>
+
+</p>
+
+</div>
+
+<div class="result">
+
+More Markets.
+More Bookmakers.
+Better Returns.
 
 </div>
 
 <div class="card">
 
-<h3>Get Early Access</h3>
+<h3>Join The Bet Builder Testing Group</h3>
 
 <p>
-Join the first CheckaBookie testers and help shape the future of football bet builder comparison.
+Be among the first football bettors to compare bet builder and accumulator payouts across major bookmakers.
+
+Join today for progress updates and early access testing.
 </p>
 
 <a
@@ -137,32 +293,6 @@ Join the first CheckaBookie testers and help shape the future of football bet bu
 
 </div>
 
-<script>
-
-function calculate() {
-
-const stake =
-parseFloat(document.getElementById("stake").value);
-
-const oddsA =
-parseFloat(document.getElementById("oddsA").value);
-
-const oddsB =
-parseFloat(document.getElementById("oddsB").value);
-
-const returnA = stake * oddsA;
-const returnB = stake * oddsB;
-
-const difference =
-Math.abs(returnB - returnA);
-
-document.getElementById("result").innerHTML =
-"Extra Value: £" +
-difference.toFixed(2);
-
-}
-
-</script>
 
 </body>
 </html>
